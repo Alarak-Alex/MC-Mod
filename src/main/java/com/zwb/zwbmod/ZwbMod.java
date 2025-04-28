@@ -58,7 +58,7 @@ public class ZwbMod
 
     public static final RegistryObject<DeadCoinItem> DEAD_COIN = ITEMS.register("dead_coin", () -> new DeadCoinItem(new Item.Properties().stacksTo(64)));
 
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("zwb_mod", () -> CreativeModeTab.builder()
+    public static final RegistryObject<CreativeModeTab> ZWB_MOD_TAB = CREATIVE_MODE_TABS.register("zwb_mod", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> DEAD_COIN.get().getDefaultInstance())
             .title(Component.translatable("zwb的模组"))
@@ -104,15 +104,11 @@ public class ZwbMod
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
-    // Add the example block item to the building blocks tab
+    // 把实例方块放到建筑方块分组
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(EXAMPLE_BLOCK_ITEM);
-
-//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(DEAD_COIN);
-//        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
