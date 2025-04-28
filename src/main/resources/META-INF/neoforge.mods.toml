@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="zwb_mod"
+version="1.0.0"
+displayName="zwb_mod"
+authors="zwb"
+description='''
+A simple test mod for NeoForge.
+'''
+[[dependencies.mytestmod]]
+modId="neoforge"
+type="required"
+versionRange="[47.1,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.mytestmod]]
+modId="minecraft"
+type="required"
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
